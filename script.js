@@ -1,5 +1,9 @@
 // CUSTOM JS: society-ecosystem/script.js
 
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Reveal Animations on Scroll
