@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Up Society | Carter's Computer Services | Hotboistep Gaming</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN for immediate local usage) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0a0a0f',
+                        societyBlue: '#00f0ff',
+                        hotboiRed: '#ff003c',
+                        carterGreen: '#00ff66',
+                        chrome: '#e0e0e0',
+                        glass: 'rgba(255, 255, 255, 0.03)'
+                    },
+                    fontFamily: {
+                        'hero': ['Orbitron', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-obsidian text-chrome font-body overflow-x-hidden selection:bg-societyBlue selection:text-obsidian">
+
+    <!-- Ambient Background Lighting -->
+    <div class="fixed inset-0 z-[-1] pointer-events-none">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-societyBlue rounded-full mix-blend-screen filter blur-[150px] opacity-20 animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-hotboiRed rounded-full mix-blend-screen filter blur-[200px] opacity-10 animate-pulse-slower"></div>
+        <div class="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-carterGreen rounded-full mix-blend-screen filter blur-[180px] opacity-10 animate-pulse-slow"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="glass-nav max-w-7xl mx-auto px-6 py-4 mt-4 rounded-2xl flex justify-between items-center border border-white/10">
+            <div class="font-hero text-xl font-bold tracking-wider text-white">
+                <span class="text-societyBlue">L</span><span class="text-carterGreen">U</span><span class="text-hotboiRed">S</span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="#about" class="nav-link hover:text-white transition-colors">About</a>
+                <a href="#services" class="nav-link hover:text-carterGreen transition-colors">Computer Services</a>
+                <a href="#levelup" class="nav-link hover:text-societyBlue transition-colors">Level Up Society</a>
+                <a href="#hotboistep" class="nav-link hover:text-hotboiRed transition-colors">Gaming</a>
+            </div>
+            <a href="#contact" class="hidden md:block btn-glow bg-white/5 border border-white/20 text-white px-6 py-2 rounded-lg font-medium hover:bg-white/10 transition-all">
+                Book Now
+            </a>
+            <button class="md:hidden text-white"><i class="fas fa-bars text-xl"></i></button>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto reveal-up">
+            <h2 class="text-sm md:text-base text-gray-400 font-hero tracking-[0.3em] uppercase mb-4">The Complete Digital Ecosystem</h2>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-hero font-bold mb-6 leading-tight text-white glow-text">
+                Level Up Your <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-societyBlue via-carterGreen to-hotboiRed animate-gradient">
+                    Digital Life.
+                </span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Learn AI. Build Smarter. Create More. The ultimate hub for technology education, automated content creation, and premium computer services.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="#services" class="btn-primary bg-societyBlue text-obsidian font-bold px-8 py-4 rounded-xl w-full sm:w-auto tracking-wide flex items-center justify-center gap-3 group">
+                    Start Learning <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="#storefront" class="btn-secondary glass-panel border border-white/20 text-white px-8 py-4 rounded-xl w-full sm:w-auto tracking-wide flex items-center justify-center gap-3 hover:bg-white/5 transition-all">
+                    <i class="fab fa-amazon text-orange-400"></i> My Gear
+                </a>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-gray-500"></i>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT SECTION -->
+    <section id="about" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="glass-card rounded-3xl p-8 md:p-16 border border-white/10 reveal-up">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="font-hero text-3xl md:text-5xl font-bold mb-6 text-white">Demystifying Technology for <span class="text-societyBlue">Everyone.</span></h2>
+                        <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                            I built this ecosystem because technology shouldn't feel like magic reserved for billionaires. Whether you need a simple PC tune-up, want to start a gaming channel, or need to learn how to deploy local AI models to automate your business—you belong here.
+                        </p>
+                        <div class="grid grid-cols-3 gap-6 mt-10">
+                            <div class="text-center">
+                                <div class="text-4xl font-hero font-bold text-carterGreen mb-2">500+</div>
+                                <div class="text-xs text-gray-400 uppercase tracking-widest">PCs Fixed</div>
+                            </div>
+                            <div class="text-center border-l border-white/10">
+                                <div class="text-4xl font-hero font-bold text-societyBlue mb-2">2M+</div>
+                                <div class="text-xs text-gray-400 uppercase tracking-widest">Views</div>
+                            </div>
+                            <div class="text-center border-l border-white/10">
+                                <div class="text-4xl font-hero font-bold text-hotboiRed mb-2">100%</div>
+                                <div class="text-xs text-gray-400 uppercase tracking-widest">Growth</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative h-[400px] rounded-2xl overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-obsidian via-transparent to-societyBlue/20 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop" alt="Setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute bottom-6 left-6 z-20">
+                            <div class="font-hero text-2xl font-bold text-white">CARTER</div>
+                            <div class="text-societyBlue text-sm tracking-widest uppercase">Founder / Architect</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CARTER'S COMPUTER SERVICES (Moved up for logic flow) -->
+    <section id="services" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal-up">
+                <h3 class="text-carterGreen font-hero tracking-[0.2em] uppercase text-sm mb-3">Carter's Computer Services</h3>
+                <h2 class="text-4xl md:text-5xl font-hero font-bold text-white">Professional Tech Support</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service Card 1 -->
+                <div class="hover-card glass-card p-8 rounded-2xl border border-carterGreen/20 reveal-up" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 rounded-xl bg-carterGreen/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-microchip text-2xl text-carterGreen"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">PC Setup & Optimization</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Custom PC builds, performance tuning, debloating Windows, and resolving hardware bottlenecks for maximum frame rates.</p>
+                    <a href="#contact" class="text-carterGreen text-sm font-semibold hover:text-white transition-colors">Book Service &rarr;</a>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="hover-card glass-card p-8 rounded-2xl border border-societyBlue/20 reveal-up" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 rounded-xl bg-societyBlue/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-2xl text-societyBlue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Local AI Installation</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Stop paying monthly subscriptions. I'll install local AI models (LLMs, Image Generators) directly on your hardware securely.</p>
+                    <a href="#contact" class="text-societyBlue text-sm font-semibold hover:text-white transition-colors">Book Service &rarr;</a>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="hover-card glass-card p-8 rounded-2xl border border-hotboiRed/20 reveal-up" style="transition-delay: 300ms;">
+                    <div class="w-14 h-14 rounded-xl bg-hotboiRed/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-2xl text-hotboiRed"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Streamer/Creator Setup</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">OBS configuration, audio routing, dual-PC streaming setups, and automated content pipelines for Twitch and YouTube.</p>
+                    <a href="#contact" class="text-hotboiRed text-sm font-semibold hover:text-white transition-colors">Book Service &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. LEVEL UP SOCIETY -->
+    <section id="levelup" class="py-24 relative z-10 bg-gradient-to-b from-transparent to-societyBlue/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="w-full lg:w-1/2 order-2 lg:order-1 relative reveal-up">
+                    <div class="absolute inset-0 bg-societyBlue/20 filter blur-[100px] rounded-full z-0"></div>
+                    <div class="relative z-10 glass-card p-2 rounded-2xl border border-societyBlue/30 shadow-[0_0_50px_rgba(0,240,255,0.1)]">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop" alt="AI Brain" class="rounded-xl w-full">
+                    </div>
+                    <!-- Floating UI Element -->
+                    <div class="absolute -right-10 top-20 glass-card p-4 rounded-xl border border-white/20 z-20 animate-float hidden md:block">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-societyBlue/20 flex items-center justify-center text-societyBlue"><i class="fas fa-bolt"></i></div>
+                            <div>
+                                <div class="text-white font-bold text-sm">Automation Active</div>
+                                <div class="text-xs text-gray-400">Saving 5hrs/week</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 order-1 lg:order-2 reveal-up">
+                    <h3 class="text-societyBlue font-hero tracking-[0.2em] uppercase text-sm mb-3">Level Up Society</h3>
+                    <h2 class="text-4xl md:text-5xl font-hero font-bold text-white mb-6">Master the Tools of Tomorrow.</h2>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        An exclusive digital hub designed to teach everyday people how to leverage AI, automate boring tasks, and build digital wealth. Access step-by-step masterclasses, prompt libraries, and workflow blueprints.
+                    </p>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fas fa-check-circle text-societyBlue"></i> Beginner-friendly AI tutorials</li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fas fa-check-circle text-societyBlue"></i> Content creation pipelines</li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fas fa-check-circle text-societyBlue"></i> Digital mindset & productivity</li>
+                    </ul>
+                    <a href="#" class="btn-primary bg-societyBlue text-obsidian font-bold px-8 py-4 rounded-xl inline-flex items-center gap-3 shadow-[0_0_30px_rgba(0,240,255,0.4)]">
+                        Access Masterclasses <i class="fas fa-lock-open"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. HOTBOISTEP GAMING -->
+    <section id="hotboistep" class="py-24 relative z-10 border-y border-white/5">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <h3 class="text-hotboiRed font-hero tracking-[0.2em] uppercase text-sm mb-3 reveal-up">Hotboistep Gaming</h3>
+            <h2 class="text-4xl md:text-6xl font-hero font-bold text-white mb-6 reveal-up">Play. Create. Dominate.</h2>
+            <p class="text-gray-300 text-lg mb-12 max-w-2xl mx-auto reveal-up">High-energy gameplay, fitness motivation, and creator culture. Join the stream and watch the digital ecosystem in action live.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-up">
+                <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer border border-hotboiRed/20">
+                    <div class="h-48 bg-gray-900 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-hotboiRed/20 group-hover:bg-hotboiRed/40 transition-colors z-10"></div>
+                        <i class="fab fa-youtube text-4xl text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"></i>
+                    </div>
+                    <div class="p-6 text-left">
+                        <h4 class="text-white font-bold mb-1">Latest Video</h4>
+                        <p class="text-sm text-gray-400">Cinematic Story Mode Playthrough</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer border border-[#9146FF]/30 shadow-[0_0_30px_rgba(145,70,255,0.1)] transform md:-translate-y-4">
+                    <div class="h-48 bg-gray-900 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[#9146FF]/20 group-hover:bg-[#9146FF]/40 transition-colors z-10"></div>
+                        <i class="fab fa-twitch text-4xl text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"></i>
+                        <div class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded animate-pulse z-20">LIVE</div>
+                    </div>
+                    <div class="p-6 text-left">
+                        <h4 class="text-white font-bold mb-1">Twitch Stream</h4>
+                        <p class="text-sm text-gray-400">Grinding Ranked & Tech Talk</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer border border-hotboiRed/20">
+                    <div class="h-48 bg-gray-900 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-hotboiRed/20 group-hover:bg-hotboiRed/40 transition-colors z-10"></div>
+                        <i class="fab fa-tiktok text-4xl text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"></i>
+                    </div>
+                    <div class="p-6 text-left">
+                        <h4 class="text-white font-bold mb-1">Viral Shorts</h4>
+                        <p class="text-sm text-gray-400">Quick Tips & High-Energy Clips</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. AMAZON STOREFRONT SECTION -->
+    <section id="storefront" class="py-24 relative z-10 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end reveal-up">
+            <div>
+                <h3 class="text-orange-400 font-hero tracking-[0.2em] uppercase text-sm mb-3">Creator Arsenal</h3>
+                <h2 class="text-3xl md:text-4xl font-hero font-bold text-white">My Recommended Gear</h2>
+            </div>
+            <a href="#" class="hidden sm:inline-flex text-orange-400 text-sm font-semibold hover:text-white transition-colors">View All on Amazon &rarr;</a>
+        </div>
+        
+        <!-- Auto-scrolling carousel track -->
+        <div class="relative w-full overflow-hidden reveal-up">
+            <!-- Left fade -->
+            <div class="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-obsidian to-transparent z-20 pointer-events-none"></div>
+            <!-- Right fade -->
+            <div class="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-obsidian to-transparent z-20 pointer-events-none"></div>
+            
+            <div class="flex space-x-6 px-6 pb-8 animate-scroll-x hover:[animation-play-state:paused]" style="width: max-content;">
+                <!-- Product 1 -->
+                <a href="#" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
+                    <div class="h-40 bg-white/5 rounded-xl mb-4 flex items-center justify-center p-2">
+                        <i class="fas fa-camera text-4xl text-gray-500"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-sm mb-1 line-clamp-2">Sony Alpha a7 IV Mirrorless Camera</h4>
+                    <p class="text-orange-400 text-sm font-bold mt-auto pt-2">View on Amazon</p>
+                </a>
+                <!-- Product 2 -->
+                <a href="#" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
+                    <div class="h-40 bg-white/5 rounded-xl mb-4 flex items-center justify-center p-2">
+                        <i class="fas fa-microphone text-4xl text-gray-500"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-sm mb-1 line-clamp-2">Shure SM7B Vocal Dynamic Microphone</h4>
+                    <p class="text-orange-400 text-sm font-bold mt-auto pt-2">View on Amazon</p>
+                </a>
+                <!-- Product 3 -->
+                <a href="#" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
+                    <div class="h-40 bg-white/5 rounded-xl mb-4 flex items-center justify-center p-2">
+                        <i class="fas fa-desktop text-4xl text-gray-500"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-sm mb-1 line-clamp-2">LG 27" UltraGear OLED Gaming Monitor</h4>
+                    <p class="text-orange-400 text-sm font-bold mt-auto pt-2">View on Amazon</p>
+                </a>
+                <!-- Product 4 -->
+                <a href="#" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
+                    <div class="h-40 bg-white/5 rounded-xl mb-4 flex items-center justify-center p-2">
+                        <i class="fas fa-lightbulb text-4xl text-gray-500"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-sm mb-1 line-clamp-2">Elgato Key Light Air - Desk Mount</h4>
+                    <p class="text-orange-400 text-sm font-bold mt-auto pt-2">View on Amazon</p>
+                </a>
+                <!-- Product 5 -->
+                <a href="#" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
+                    <div class="h-40 bg-white/5 rounded-xl mb-4 flex items-center justify-center p-2">
+                        <i class="fas fa-keyboard text-4xl text-gray-500"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-sm mb-1 line-clamp-2">Wooting 60HE Analog Mechanical Keyboard</h4>
+                    <p class="text-orange-400 text-sm font-bold mt-auto pt-2">View on Amazon</p>
+                </a>
+            </div>
+        </div>
+        <div class="text-center mt-4 sm:hidden">
+            <a href="#" class="text-orange-400 text-sm font-semibold">View All on Amazon &rarr;</a>
+        </div>
+    </section>
+
+    <!-- 8. CONTACT SECTION -->
+    <section id="contact" class="py-24 relative z-10">
+        <div class="max-w-4xl mx-auto px-6 reveal-up">
+            <div class="glass-card rounded-3xl p-8 md:p-12 border border-white/10 relative overflow-hidden">
+                <!-- Decorative flare -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-societyBlue/10 rounded-full filter blur-[80px]"></div>
+                
+                <div class="text-center mb-10 relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-hero font-bold text-white mb-4">Ready to Level Up?</h2>
+                    <p class="text-gray-400">Book a service, ask a question, or join the movement.</p>
+                </div>
+                
+                <form class="relative z-10 space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Name</label>
+                            <input type="text" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue transition-colors" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Email</label>
+                            <input type="email" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue transition-colors" placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Service Needed</label>
+                        <select class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue appearance-none transition-colors">
+                            <option>PC Setup & Optimization</option>
+                            <option>Local AI Installation</option>
+                            <option>Website Creation</option>
+                            <option>Content Creator Setup</option>
+                            <option>Level Up Society Access</option>
+                            <option>Other / General Inquiry</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Message</label>
+                        <textarea rows="4" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue transition-colors" placeholder="How can I help you level up?"></textarea>
+                    </div>
+                    <button type="submit" class="w-full btn-glow bg-white text-obsidian font-bold text-lg py-4 rounded-xl hover:bg-gray-200 transition-colors">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="border-t border-white/10 bg-black/50 relative z-10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="font-hero text-2xl font-bold tracking-wider text-white mb-6">
+                        <span class="text-societyBlue">L</span><span class="text-carterGreen">U</span><span class="text-hotboiRed">S</span>
+                        <span class="text-sm font-body tracking-normal text-gray-500 ml-2">ECOSYSTEM</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                        Combining technology education, AI creativity, gaming culture, and computer assistance into one powerful creator movement.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#services" class="hover:text-carterGreen transition-colors">Computer Services</a></li>
+                        <li><a href="#levelup" class="hover:text-societyBlue transition-colors">Level Up Society</a></li>
+                        <li><a href="#hotboistep" class="hover:text-hotboiRed transition-colors">Gaming</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Socials</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FF0000] hover:text-white transition-colors text-gray-400"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#9146FF] hover:text-white transition-colors text-gray-400"><i class="fab fa-twitch"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white hover:text-black transition-colors text-gray-400"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-colors text-gray-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FF9900] hover:text-white transition-colors text-gray-400"><i class="fab fa-amazon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+                <p>&copy; 2026 Level Up Society & Carter's Computer Services. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
