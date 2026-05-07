@@ -333,31 +333,37 @@
                     <p class="text-gray-400">Book a service, ask a question, or join the movement.</p>
                 </div>
                 
-                <form class="relative z-10 space-y-6">
+                <form action="https://formsubmit.co/kajamal0@yahoo.com" method="POST" class="relative z-10 space-y-6">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Lead: Level Up Society Ecosystem!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://society-ecosystem.vercel.app/#contact">
+                    <input type="hidden" name="_autoresponse" value="Welcome to the Level Up Society! Thank you for reaching out. While I review your message, feel free to check out my Creator Arsenal gear on Amazon to start leveling up your setup today: https://amzn.to/3R8VfaA">
+                    
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Name</label>
-                            <input type="text" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue transition-colors" placeholder="John Doe">
+                            <input type="text" name="name" required class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue transition-colors" placeholder="John Doe">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Email</label>
-                            <input type="email" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue transition-colors" placeholder="john@example.com">
+                            <input type="email" name="email" required class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue transition-colors" placeholder="john@example.com">
                         </div>
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Service Needed</label>
-                        <select class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue appearance-none transition-colors">
-                            <option>PC Setup & Optimization</option>
-                            <option>Local AI Installation</option>
-                            <option>Website Creation</option>
-                            <option>Content Creator Setup</option>
-                            <option>Level Up Society Access</option>
-                            <option>Other / General Inquiry</option>
+                        <select name="service" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue appearance-none transition-colors">
+                            <option value="PC Setup & Optimization">PC Setup & Optimization</option>
+                            <option value="Local AI Installation">Local AI Installation</option>
+                            <option value="Website Creation">Website Creation</option>
+                            <option value="Content Creator Setup">Content Creator Setup</option>
+                            <option value="Level Up Society Access">Level Up Society Access</option>
+                            <option value="Other / General Inquiry">Other / General Inquiry</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Message</label>
-                        <textarea rows="4" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue transition-colors" placeholder="How can I help you level up?"></textarea>
+                        <textarea name="message" rows="4" required class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue transition-colors" placeholder="How can I help you level up?"></textarea>
                     </div>
                     <button type="submit" class="w-full btn-glow bg-white text-obsidian font-bold text-lg py-4 rounded-xl hover:bg-gray-200 transition-colors">
                         Send Message
