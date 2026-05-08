@@ -107,4 +107,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    
+    // 7. Custom Telegram Backend Form Submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submit-btn');
+            const successMessage = document.getElementById('success-message');
+            
+            // Get form values
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Visual feedback
+            submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    // Hide form fields and button, show success
+                    Array.from(contactForm.children).forEach(child => {
+                        if (child.id !== 'success-message') {
+                            child.classList.add('hidden');
+                        }
+                    });
+                    successMessage.classList.remove('hidden');
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (err) {
+                alert("Something went wrong. Please try reaching out on Telegram or Facebook directly!");
+                submitBtn.innerHTML = 'Send Message &rarr;';
+                submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            }
+        });
+    }
 });
