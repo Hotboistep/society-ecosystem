@@ -80,6 +80,15 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenu.classList.toggle('hidden');
         });
         
+        // Close menu for external links with a delay so Safari doesn't cancel navigation
+        const mobileLinks = mobileMenu.querySelectorAll('a:not([href^="#"])');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 150);
+            });
+        });
     }
     
     // 6. Smooth Scroll Intercept (Prevents URL Hash Updates)
