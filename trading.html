@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Academy | Forex & Gold (XAUUSD) Education</title>
+    <meta name="description" content="Learn Forex and Gold (XAUUSD) trading with disciplined strategies, risk management, and market structure analysis.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN matching index.html config) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#08080a',
+                        gold: '#d4af37',
+                        goldDark: '#aa7c11',
+                        societyBlue: '#00f0ff',
+                        chrome: '#e0e0e0',
+                        glass: 'rgba(255, 255, 255, 0.02)'
+                    },
+                    fontFamily: {
+                        'hero': ['Orbitron', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-obsidian text-chrome font-body overflow-x-hidden selection:bg-gold selection:text-obsidian">
+
+    <!-- Ambient Gold Background Lighting -->
+    <div class="fixed inset-0 z-[-1] pointer-events-none">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-gold/10 rounded-full mix-blend-screen filter blur-[150px] opacity-25 animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-yellow-600/5 rounded-full mix-blend-screen filter blur-[200px] opacity-15 animate-pulse-slower"></div>
+        <div class="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-gold/5 rounded-full mix-blend-screen filter blur-[180px] opacity-10 animate-pulse-slow"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="glass-nav max-w-7xl mx-auto px-6 py-4 mt-4 rounded-2xl flex justify-between items-center border border-white/10 relative">
+            <div class="font-hero text-xl font-bold tracking-wider text-white">
+                <a href="index.html" class="hover:opacity-95 transition-opacity">
+                    <span class="text-gold">L</span><span class="text-white">U</span><span class="text-gold">S</span>
+                    <span class="text-xs font-body tracking-wider text-gray-500 ml-1">TRADING</span>
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="index.html" class="nav-link hover:text-gold transition-colors">Home</a>
+                <a href="#why-me" class="nav-link hover:text-gold transition-colors">Why Me</a>
+                <a href="#curriculum" class="nav-link hover:text-gold transition-colors">Curriculum</a>
+                <a href="#gold-specialization" class="nav-link hover:text-gold transition-colors">Gold Specialization</a>
+                <a href="#roadmap" class="nav-link hover:text-gold transition-colors">Roadmap</a>
+                <a href="#faqs" class="nav-link hover:text-gold transition-colors">FAQs</a>
+            </div>
+            <a href="buy-trading.html" class="hidden md:block btn-glow bg-gradient-gold text-obsidian px-6 py-2.5 rounded-lg font-bold hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all">
+                Join Academy — $100
+            </a>
+            <button class="md:hidden text-white" id="mobile-menu-btn"><i class="fas fa-bars text-xl"></i></button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 bg-obsidian/95 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden flex flex-col shadow-2xl">
+            <a href="index.html" class="px-6 py-4 border-b border-white/5 hover:bg-white/5 text-white">Home</a>
+            <a href="#why-me" class="px-6 py-4 border-b border-white/5 hover:bg-white/5 text-gray-300">Why Me</a>
+            <a href="#curriculum" class="px-6 py-4 border-b border-white/5 hover:bg-white/5 text-gray-300">Curriculum</a>
+            <a href="#gold-specialization" class="px-6 py-4 border-b border-white/5 hover:bg-white/5 text-gold font-bold">Gold Specialization</a>
+            <a href="#roadmap" class="px-6 py-4 border-b border-white/5 hover:bg-white/5 text-gray-300">Roadmap</a>
+            <a href="#faqs" class="px-6 py-4 border-b border-white/5 hover:bg-white/5 text-gray-300">FAQs</a>
+            <a href="buy-trading.html" class="px-6 py-4 bg-gradient-gold text-center font-bold text-obsidian">Join Academy — $100</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal-up">
+            <!-- Hero Text -->
+            <div class="lg:col-span-7 text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-hero tracking-widest uppercase mb-6">
+                    <i class="fas fa-chart-line"></i> Institutional Trading Education
+                </div>
+                <h1 class="text-4xl md:text-6xl font-hero font-bold mb-6 leading-tight text-white glow-text">
+                    Master Forex Trading <br>
+                    <span class="text-gradient-gold">
+                        With Confidence.
+                    </span>
+                </h1>
+                <p class="text-base md:text-lg text-gray-300 mb-10 max-w-xl font-light leading-relaxed">
+                    Learn Forex trading with a focus on Gold (XAUUSD), market structure, risk management, and disciplined trading strategies designed to help you become a more informed trader.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-start items-center gap-6">
+                    <a href="buy-trading.html" class="btn-glow bg-gradient-gold text-obsidian font-bold px-8 py-4 rounded-xl w-full sm:w-auto tracking-wide flex items-center justify-center gap-3 shadow-[0_0_25px_rgba(212,175,55,0.3)] hover:shadow-[0_0_35px_rgba(212,175,55,0.5)] transition-all">
+                        Start Learning <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#curriculum" class="glass-panel border border-white/10 hover:border-gold/30 text-white px-8 py-4 rounded-xl w-full sm:w-auto tracking-wide flex items-center justify-center gap-3 hover:bg-white/5 transition-all">
+                        View Courses
+                    </a>
+                </div>
+
+                <!-- Small Trust Stats -->
+                <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/10 max-w-lg">
+                    <div>
+                        <div class="text-2xl md:text-3xl font-hero font-bold text-white mb-1">100%</div>
+                        <div class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest">No-Nonsense Logic</div>
+                    </div>
+                    <div class="border-l border-white/10 pl-6">
+                        <div class="text-2xl md:text-3xl font-hero font-bold text-gold mb-1">XAUUSD</div>
+                        <div class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest">Gold Specialization</div>
+                    </div>
+                    <div class="border-l border-white/10 pl-6">
+                        <div class="text-2xl md:text-3xl font-hero font-bold text-white mb-1">1-on-1</div>
+                        <div class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest">Discord Support</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image Visual -->
+            <div class="lg:col-span-5 relative mt-8 lg:mt-0">
+                <div class="absolute inset-0 bg-gold/15 filter blur-[80px] rounded-full z-0"></div>
+                <!-- Premium Frame -->
+                <div class="relative z-10 glass-card p-3 rounded-2xl border border-gold/30 shadow-[0_0_50px_rgba(212,175,55,0.15)] animate-float-slow overflow-hidden">
+                    <img src="assets/gold_trading_hero.png" alt="Forex & Gold Candlestick Chart" class="rounded-xl w-full object-cover">
+                    <!-- Floating Data Badges -->
+                    <div class="absolute top-8 -left-6 glass-card px-4 py-2.5 rounded-xl border border-white/20 shadow-2xl flex items-center gap-3">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
+                        <div class="text-xs">
+                            <span class="text-gray-400">XAUUSD</span>
+                            <span class="text-green-500 font-bold block font-mono">$2,342.50 (+1.48%)</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-8 -right-6 glass-card px-4 py-2.5 rounded-xl border border-white/20 shadow-2xl flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-gold/20 flex items-center justify-center text-gold"><i class="fas fa-shield-alt"></i></div>
+                        <div class="text-xs">
+                            <span class="text-gray-400">Risk Reward Ratio</span>
+                            <span class="text-white font-bold block font-mono">1:3 minimum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE MARKET PRICE TICKER -->
+    <section class="border-y border-white/10 bg-black/40 py-4 relative z-10 overflow-hidden">
+        <div class="relative w-full overflow-hidden">
+            <!-- Left & Right Fade Fills -->
+            <div class="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-obsidian to-transparent z-20 pointer-events-none"></div>
+            <div class="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-obsidian to-transparent z-20 pointer-events-none"></div>
+            
+            <div class="flex space-x-12 px-6 animate-scroll-x hover:[animation-play-state:paused]" id="ticker-carousel" style="width: max-content;">
+                <!-- Instrument 1 -->
+                <div class="flex items-center gap-3 shrink-0 font-mono text-sm">
+                    <span class="text-gold font-bold font-hero">XAUUSD</span>
+                    <span class="text-white" id="price-xau">$2,342.50</span>
+                    <span class="text-green-500 text-xs flex items-center gap-1 font-bold"><i class="fas fa-caret-up"></i> +1.48%</span>
+                </div>
+                <!-- Instrument 2 -->
+                <div class="flex items-center gap-3 shrink-0 font-mono text-sm">
+                    <span class="text-gray-400 font-bold font-hero">EURUSD</span>
+                    <span class="text-white" id="price-eur">1.0845</span>
+                    <span class="text-red-500 text-xs flex items-center gap-1 font-bold"><i class="fas fa-caret-down"></i> -0.12%</span>
+                </div>
+                <!-- Instrument 3 -->
+                <div class="flex items-center gap-3 shrink-0 font-mono text-sm">
+                    <span class="text-gray-400 font-bold font-hero">GBPUSD</span>
+                    <span class="text-white" id="price-gbp">1.2688</span>
+                    <span class="text-green-500 text-xs flex items-center gap-1 font-bold"><i class="fas fa-caret-up"></i> +0.08%</span>
+                </div>
+                <!-- Instrument 4 -->
+                <div class="flex items-center gap-3 shrink-0 font-mono text-sm">
+                    <span class="text-gray-400 font-bold font-hero">USDJPY</span>
+                    <span class="text-white" id="price-jpy">156.42</span>
+                    <span class="text-red-500 text-xs flex items-center gap-1 font-bold"><i class="fas fa-caret-down"></i> -0.04%</span>
+                </div>
+                <!-- Instrument 5 -->
+                <div class="flex items-center gap-3 shrink-0 font-mono text-sm">
+                    <span class="text-gold font-bold font-hero">US30</span>
+                    <span class="text-white" id="price-us30">39,120</span>
+                    <span class="text-green-500 text-xs flex items-center gap-1 font-bold"><i class="fas fa-caret-up"></i> +0.32%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY LEARN WITH ME -->
+    <section id="why-me" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal-up">
+                <h3 class="text-gold font-hero tracking-[0.2em] uppercase text-sm mb-3">Core Pillars</h3>
+                <h2 class="text-3xl md:text-5xl font-hero font-bold text-white">Why Learn Trading With Me</h2>
+                <p class="text-gray-400 text-sm md:text-base mt-4 max-w-xl mx-auto font-light">No get-rich-quick claims. Just pure market logic, strict discipline, and real metrics.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="hover-card glass-card p-8 rounded-2xl border border-white/5 hover:border-gold/20 reveal-up" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center mb-6 border border-gold/20">
+                        <i class="fas fa-shield-halved text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Risk-First Management</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Most traders fail because of sizing, not their strategy. We focus heavily on capital preservation, risk-to-reward metrics, and maintaining a solid psychological drawdown plan.</p>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="hover-card glass-card p-8 rounded-2xl border border-white/5 hover:border-gold/20 reveal-up" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center mb-6 border border-gold/20">
+                        <i class="fas fa-magnifying-glass-chart text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Clean Price Action & Structure</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Ditch the complicated overlays. Learn to read clean candlestick movements, support/resistance zones, liquidity sweeps, and institutional order blocks for high-probability setups.</p>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="hover-card glass-card p-8 rounded-2xl border border-white/5 hover:border-gold/20 reveal-up" style="transition-delay: 300ms;">
+                    <div class="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center mb-6 border border-gold/20">
+                        <i class="fas fa-graduation-cap text-2xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Gold Specialize Focus</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Gold (XAUUSD) has unique volatility, timing, and correlations. We break down the specific rules for trading Gold profitably, including news trading and session alignments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU'LL LEARN (CURRICULUM) -->
+    <section id="curriculum" class="py-24 relative z-10 bg-black/30 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal-up">
+                <h3 class="text-gold font-hero tracking-[0.2em] uppercase text-sm mb-3">Curriculum Overview</h3>
+                <h2 class="text-3xl md:text-5xl font-hero font-bold text-white">Syllabus Tailored For Consistency</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Module Card 1 -->
+                <div class="glass-card rounded-2xl border border-white/10 p-8 flex flex-col justify-between reveal-up">
+                    <div>
+                        <div class="text-gold font-hero text-xs font-bold tracking-widest uppercase mb-2">Module 01</div>
+                        <h3 class="text-xl font-bold text-white mb-4 border-b border-white/5 pb-4">Market Structure & Logic</h3>
+                        <ul class="space-y-3 text-sm text-gray-400">
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-gold text-xs mt-1"></i> Market cycles, trends, & ranges</li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-gold text-xs mt-1"></i> Spotting institutional order blocks</li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-gold text-xs mt-1"></i> Mapping valid break of structures (BOS)</li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-gold text-xs mt-1"></i> Session timings (London & NY overlap)</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5 text-xs text-gray-500 font-mono">10 Lessons &bull; Homework Assignments</div>
+                </div>
+
+                <!-- Module Card 2 -->
+                <div class="glass-card rounded-2xl border border-gold/30 p-8 flex flex-col justify-between shadow-[0_0_20px_rgba(212,175,55,0.05)] relative reveal-up">
+                    <div class="absolute -top-3 right-6 bg-gradient-gold text-obsidian text-[10px] font-bold tracking-wider px-3 py-1 rounded-full uppercase">Crucial</div>
+                    <div>
+                        <div class="text-gold font-hero text-xs font-bold tracking-widest uppercase mb-2">Module 02</div>
+                        <h3 class="text-xl font-bold text-white mb-4 border-b border-white/5 pb-4">Risk Mastery & Psychology</h3>
+                        <ul class="space-y-3 text-sm text-gray-400">
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-gold text-xs mt-1"></i> Mathematics of drawdowns</li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-gold text-xs mt-1"></i> Sizing configurations per setup</li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-gold text-xs mt-1"></i> Managing emotions after consecutive losses</li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-gold text-xs mt-1"></i> Creating a bulletproof trading plan</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5 text-xs text-gray-500 font-mono">8 Lessons &bull; Interactive Checklists</div>
+                </div>
+
+                <!-- Module Card 3 -->
+                <div class="glass-card rounded-2xl border border-white/10 p-8 flex flex-col justify-between reveal-up">
+                    <div>
+                        <div class="text-gold font-hero text-xs font-bold tracking-widest uppercase mb-2">Module 03</div>
+                        <h3 class="text-xl font-bold text-white mb-4 border-b border-white/5 pb-4">Gold (XAUUSD) Strategies</h3>
+                        <ul class="space-y-3 text-sm text-gray-400">
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-gold text-xs mt-1"></i> Understanding Gold correlations</li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-gold text-xs mt-1"></i> Trading high-impact US news (CPI, FOMC)</li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-gold text-xs mt-1"></i> Gold liquidity sweeps & scalp setups</li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-gold text-xs mt-1"></i> Multi-timeframe daily biases</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5 text-xs text-gray-500 font-mono">12 Lessons &bull; Case Studies</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOLD (XAUUSD) SPECIALIZATION -->
+    <section id="gold-specialization" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <!-- Text -->
+                <div class="w-full lg:w-1/2 reveal-up">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-hero tracking-widest uppercase mb-6">
+                        <i class="fas fa-coins"></i> Precious Metal Volatility
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-hero font-bold text-white mb-6 leading-tight">Why Specialize In Gold Trading?</h2>
+                    <p class="text-gray-300 text-base leading-relaxed mb-6">
+                        Gold (XAUUSD) is the most sought-after asset in the Forex market, offering a unique blend of extreme liquidity and reliable technical characteristics. However, its high volatility can be dangerous without proper education.
+                    </p>
+                    <p class="text-gray-300 text-base leading-relaxed mb-8">
+                        Our academy offers specialized strategy guides to understand how the Gold price behaves during US session open times, how to spot manipulation around critical support/resistance boundaries, and how to execute quick scalps and macro swing positions safely.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold"><i class="fas fa-bolt"></i></div>
+                            <span class="text-white text-sm font-semibold">High Liquidity</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold"><i class="fas fa-chart-line"></i></div>
+                            <span class="text-white text-sm font-semibold">Clean Structure</span>
+                        </div>
+                    </div>
+                    <a href="buy-trading.html" class="btn-glow bg-gradient-gold text-obsidian font-bold px-8 py-4 rounded-xl inline-flex items-center gap-3 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                        Learn Gold Strategy <i class="fas fa-lock-open"></i>
+                    </a>
+                </div>
+
+                <!-- Graphic Showcase -->
+                <div class="w-full lg:w-1/2 relative reveal-up">
+                    <div class="absolute inset-0 bg-gold/25 filter blur-[100px] rounded-full z-0"></div>
+                    <div class="relative z-10 glass-card p-2 rounded-2xl border border-gold/30 shadow-[0_0_50px_rgba(212,175,55,0.1)]">
+                        <img src="assets/gold_chart_detail.png" alt="Gold Candlesticks Detail" class="rounded-xl w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEGINNER ROADMAP -->
+    <section id="roadmap" class="py-24 relative z-10 bg-black/20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal-up">
+                <h3 class="text-gold font-hero tracking-[0.2em] uppercase text-sm mb-3">Roadmap</h3>
+                <h2 class="text-3xl md:text-5xl font-hero font-bold text-white">The Beginner-to-Consistent Path</h2>
+                <p class="text-gray-400 mt-4 max-w-lg mx-auto text-sm font-light">A structured step-by-step path designed to transition you from basics to independent execution.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Roadmap Image -->
+                <div class="lg:col-span-5 relative order-2 lg:order-1">
+                    <div class="absolute inset-0 bg-gold/15 filter blur-[80px] rounded-full z-0"></div>
+                    <div class="relative z-10 glass-card p-2 rounded-2xl border border-white/10 shadow-2xl">
+                        <img src="assets/trading_education.png" alt="Forex Roadmap Graphic" class="rounded-xl w-full">
+                    </div>
+                </div>
+
+                <!-- Steps -->
+                <div class="lg:col-span-7 space-y-8 order-1 lg:order-2">
+                    <!-- Step 1 -->
+                    <div class="flex gap-6 reveal-up">
+                        <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-hero font-bold shrink-0 shadow-lg">01</div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg mb-1">Phase 1: Foundation Setup</h4>
+                            <p class="text-gray-400 text-sm">Master trading terminologies, leverage parameters, margin calculations, and fundamental price action indicators. Understand exactly how brokers operate and how to configure trading views.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex gap-6 reveal-up">
+                        <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-hero font-bold shrink-0 shadow-lg">02</div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg mb-1">Phase 2: Mechanics & Strategy</h4>
+                            <p class="text-gray-400 text-sm">Develop rules for identifying session ranges, market bias, institutional levels, and liquidity parameters. Create your specific trading model to trade London and New York overlaps.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex gap-6 reveal-up">
+                        <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-hero font-bold shrink-0 shadow-lg">03</div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg mb-1">Phase 3: Backtesting & Sizing</h4>
+                            <p class="text-gray-400 text-sm">Formulate disciplined drawdowns rules. Backtest your strategy across at least 100 historical data points to prove statistical edge and define your risk per trade limits (0.5% - 1% standard).</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="flex gap-6 reveal-up">
+                        <div class="w-12 h-12 rounded-full bg-gold/15 border border-gold/50 flex items-center justify-center text-gold font-hero font-bold shrink-0 shadow-[0_0_15px_rgba(212,175,55,0.2)]">04</div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg mb-1">Phase 4: Funding & Scaling</h4>
+                            <p class="text-gray-400 text-sm">Prepare to pass evaluation challenges from top proprietary trading firms (Prop Firms) to secure funded trading capital and start scaling payouts systematically.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-24 relative z-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal-up">
+                <h3 class="text-gold font-hero tracking-[0.2em] uppercase text-sm mb-3">Student Success</h3>
+                <h2 class="text-3xl md:text-5xl font-hero font-bold text-white">Client Feedback</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card p-8 rounded-2xl border border-white/5 hover:border-gold/10 transition-colors reveal-up">
+                    <div class="flex gap-1 text-gold text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 text-sm italic mb-6 leading-relaxed">"The Gold specialization module changed how I look at market structure entirely. I used to blow accounts trying to trade news, but the sessions rules have made me extremely patient."</p>
+                    <div class="font-bold text-white text-sm">David K.</div>
+                    <div class="text-xs text-gray-500">Funded Trader (100k Account)</div>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card p-8 rounded-2xl border border-gold/20 shadow-[0_0_20px_rgba(212,175,55,0.03)] reveal-up" style="transition-delay: 100ms;">
+                    <div class="flex gap-1 text-gold text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 text-sm italic mb-6 leading-relaxed">"The absolute best $100 I have ever spent in my trading journey. No indicators hype, just pure clean price action, strict Risk management rules, and actual Discord logic reviews."</p>
+                    <div class="font-bold text-white text-sm">Marcus T.</div>
+                    <div class="text-xs text-gray-500">Independent Forex Trader</div>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-card p-8 rounded-2xl border border-white/5 hover:border-gold/10 transition-colors reveal-up" style="transition-delay: 200ms;">
+                    <div class="flex gap-1 text-gold text-xs mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 text-sm italic mb-6 leading-relaxed">"Risk parameters taught in Module 2 helped me recover from a major drawdown. Highly recommend this program if you are ready to treat trading like a real corporate business."</p>
+                    <div class="font-bold text-white text-sm">Sophia R.</div>
+                    <div class="text-xs text-gray-500">Swing Trader</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS -->
+    <section id="faqs" class="py-24 relative z-10 bg-black/10 border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 reveal-up">
+                <h3 class="text-gold font-hero tracking-[0.2em] uppercase text-sm mb-3">Support</h3>
+                <h2 class="text-3xl md:text-4xl font-hero font-bold text-white">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4 reveal-up">
+                <!-- FAQ 1 -->
+                <div class="glass-card rounded-xl border border-white/10 overflow-hidden transition-all duration-300">
+                    <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center hover:bg-white/5 focus:outline-none faq-toggle-btn">
+                        <span>Do I need prior trading experience to join?</span>
+                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                        <p class="px-6 pb-5 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">No. The curriculum begins with Phase 1 which covers basics, definitions, and setting up your chart software from scratch. However, a dedication to study and follow rules is highly necessary.</p>
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="glass-card rounded-xl border border-white/10 overflow-hidden transition-all duration-300">
+                    <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center hover:bg-white/5 focus:outline-none faq-toggle-btn">
+                        <span>Why is the price only $100? Are there monthly fees?</span>
+                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                        <p class="px-6 pb-5 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">This is a one-time enrollment fee of $100 for lifetime access to the curriculum modules, tools, and updates. There are absolutely no recurring monthly subscriptions or hidden bills.</p>
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="glass-card rounded-xl border border-white/10 overflow-hidden transition-all duration-300">
+                    <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center hover:bg-white/5 focus:outline-none faq-toggle-btn">
+                        <span>Is there a community or Discord access?</span>
+                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                        <p class="px-6 pb-5 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">Yes, once you join, you will receive links to join the private Discord server where we discuss market structures, chart analysis, daily bias, and news events together.</p>
+                    </div>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="glass-card rounded-xl border border-white/10 overflow-hidden transition-all duration-300">
+                    <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center hover:bg-white/5 focus:outline-none faq-toggle-btn">
+                        <span>Can I get funded through this program?</span>
+                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-out">
+                        <p class="px-6 pb-5 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">We explicitly teach you the risk requirements to pass evaluation challenges from major prop firms (e.g. 5% daily drawdown, 10% total drawdown rules). By using our sizing formulas, you stand a much stronger chance of passing systematically.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INQUIRY FORM (CTA) -->
+    <section id="contact" class="py-24 relative z-10">
+        <div class="max-w-4xl mx-auto px-6 reveal-up">
+            <div class="glass-card rounded-3xl p-8 md:p-12 border border-gold/30 relative overflow-hidden">
+                <!-- Decorative Gold Flare -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full filter blur-[80px]"></div>
+                
+                <div class="text-center mb-10 relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-hero font-bold text-white mb-4">Request Academy Details</h2>
+                    <p class="text-gray-400">Have questions? Fill out the details below to receive a curriculum package.</p>
+                </div>
+                
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Name</label>
+                            <input type="text" name="name" required class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Email</label>
+                            <input type="email" name="email" required class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors" placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Interest Level</label>
+                        <select name="service" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold appearance-none transition-colors">
+                            <option value="Beginner Forex Course">Beginner Forex Course - $100</option>
+                            <option value="Advanced Gold Playbook">Advanced Gold Playbook - $100</option>
+                            <option value="Private Mentorship & Discord">Private Mentorship & Discord - $100</option>
+                            <option value="General Inquiry">General Inquiry / Question</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Message</label>
+                        <textarea name="message" rows="4" required class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors" placeholder="Let me know how I can help you with your trading journey..."></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="w-full btn-glow bg-gradient-gold text-obsidian font-bold py-4 rounded-xl hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all">
+                        Submit Request &rarr;
+                    </button>
+                    <!-- Success Message Container (Hidden by default) -->
+                    <div id="success-message" class="hidden mt-6 p-6 rounded-xl bg-gold/10 border border-gold/30 text-center">
+                        <h4 class="text-xl font-bold text-white mb-2">Inquiry Submitted! 🚀</h4>
+                        <p class="text-gray-300 mb-4">While we review your request, click below to secure lifetime enrollment immediately:</p>
+                        <a href="buy-trading.html" class="inline-block bg-gradient-gold text-obsidian font-bold px-6 py-3 rounded-lg hover:shadow-lg transition-all">Enroll Now for $100 &rarr;</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- DISCLAIMER / FOOTER -->
+    <footer class="border-t border-white/10 bg-black/50 relative z-10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <!-- Risk Disclaimer Box -->
+            <div class="mb-12 p-6 rounded-xl bg-red-950/10 border border-red-900/30 text-xs text-gray-400 leading-relaxed">
+                <h4 class="text-red-500 font-bold uppercase tracking-wider mb-2 font-hero text-[10px]"><i class="fas fa-triangle-exclamation"></i> Risk Warning Disclaimer</h4>
+                Trading Forex and Gold involves substantial risk. All educational content is provided for informational purposes only and does not constitute financial advice. Past performance does not guarantee future results. You should never risk capital you cannot afford to lose.
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="font-hero text-2xl font-bold tracking-wider text-white mb-6">
+                        <span class="text-gold">L</span><span class="text-white">U</span><span class="text-gold">S</span>
+                        <span class="text-sm font-body tracking-normal text-gray-500 ml-2">TRADING ACADEMY</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                        Combining disciplined trading logics, advanced risk management strategies, and Gold-specific playbooks to build consistent traders.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home Portal</a></li>
+                        <li><a href="#why-me" class="hover:text-gold transition-colors">Why Me</a></li>
+                        <li><a href="#curriculum" class="hover:text-gold transition-colors">Curriculum</a></li>
+                        <li><a href="#gold-specialization" class="hover:text-gold transition-colors">Gold Specialization</a></li>
+                        <li><a href="#roadmap" class="hover:text-gold transition-colors">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Enrollment</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="buy-trading.html" class="text-gold font-bold hover:underline">Buy Mentorship — $100</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Request Catalog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+                <p>&copy; 2026 Level Up Society & Trading Academy. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    
+    <!-- FAQ Toggle Logic Inline for safety & reliability -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggles = document.querySelectorAll('.faq-toggle-btn');
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const answer = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('.fa-chevron-down');
+                    
+                    if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
+                        answer.style.maxHeight = '0px';
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        // Close other active FAQs first
+                        document.querySelectorAll('.faq-answer').forEach(ans => ans.style.maxHeight = '0px');
+                        document.querySelectorAll('.faq-toggle-btn i').forEach(ic => ic.style.transform = 'rotate(0deg)');
+                        
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // Simulated live price feed adjustments
+            const xauPrice = document.getElementById('price-xau');
+            const eurPrice = document.getElementById('price-eur');
+            const gbpPrice = document.getElementById('price-gbp');
+            const jpyPrice = document.getElementById('price-jpy');
+            
+            function simulateTicks() {
+                if (xauPrice) {
+                    const currentXAU = parseFloat(xauPrice.textContent.replace('$', '').replace(',', ''));
+                    const delta = (Math.random() - 0.48) * 1.5; // slight upward bias
+                    const newXAU = currentXAU + delta;
+                    xauPrice.textContent = '$' + newXAU.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                }
+                if (eurPrice) {
+                    const currentEUR = parseFloat(eurPrice.textContent);
+                    const delta = (Math.random() - 0.5) * 0.0004;
+                    eurPrice.textContent = (currentEUR + delta).toFixed(4);
+                }
+                if (gbpPrice) {
+                    const currentGBP = parseFloat(gbpPrice.textContent);
+                    const delta = (Math.random() - 0.5) * 0.0005;
+                    gbpPrice.textContent = (currentGBP + delta).toFixed(4);
+                }
+                if (jpyPrice) {
+                    const currentJPY = parseFloat(jpyPrice.textContent);
+                    const delta = (Math.random() - 0.5) * 0.05;
+                    jpyPrice.textContent = (currentJPY + delta).toFixed(2);
+                }
+            }
+            setInterval(simulateTicks, 3000);
+        });
+    </script>
+</body>
+</html>

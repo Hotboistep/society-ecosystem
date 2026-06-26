@@ -129,3 +129,76 @@
 @keyframes rotate {
     100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
+
+/* Gold Theme Custom Utilities */
+:root {
+    --gold-color: #d4af37;
+    --gold-glow: 0 0 20px rgba(212, 175, 55, 0.35);
+    --gold-glow-strong: 0 0 30px rgba(212, 175, 55, 0.65);
+}
+
+.text-gold {
+    color: var(--gold-color);
+}
+
+.bg-gold {
+    background-color: var(--gold-color);
+}
+
+.border-gold {
+    border-color: var(--gold-color);
+}
+
+.glow-gold {
+    box-shadow: var(--gold-glow);
+}
+
+.glow-gold-strong {
+    box-shadow: var(--gold-glow-strong);
+}
+
+.glow-text-gold {
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+/* Gold Gradient utilities for buttons & text */
+.bg-gradient-gold {
+    background: linear-gradient(135deg, #ffe066 0%, #d4af37 50%, #b28d24 100%);
+}
+
+.text-gradient-gold {
+    background: linear-gradient(135deg, #ffe066 0%, #d4af37 50%, #b28d24 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Candlestick drawing classes */
+.candle-glow-green {
+    filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.4));
+}
+.candle-glow-red {
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.4));
+}
+
+/* Floating animation for dashboard UI */
+.animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(0.5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Glow lines keyframes */
+@keyframes dash {
+    to {
+        stroke-dashoffset: -1000;
+    }
+}
+.animated-chart-line {
+    stroke-dasharray: 1000;
+    animation: dash 35s linear infinite;
+}
+
