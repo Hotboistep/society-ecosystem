@@ -226,14 +226,14 @@
                         <div class="w-20 h-20 rounded-full bg-gold/15 flex items-center justify-center text-gold mx-auto border border-gold/30 shadow-[0_0_30px_rgba(212,175,55,0.1)]">
                             <i class="fas fa-check text-4xl animate-bounce"></i>
                         </div>
-                        <h2 class="text-3xl font-hero font-bold text-white">Enrollment Successful! 🚀</h2>
+                        <h2 class="text-3xl font-hero font-bold text-white">Inquiry Registered! 🚀</h2>
                         <div class="max-w-md mx-auto text-sm text-gray-400 space-y-4 leading-relaxed">
-                            <p>Thank you for your enrollment! Your $100 purchase of the **Gold & Forex Trading Mentorship** has been verified and registered.</p>
-                            <p>A notification and confirmation has been sent. You can join the private Discord server immediately using the link below:</p>
+                            <p>We have received your enrollment request. You are now being redirected to complete your payment.</p>
+                            <p>If you were not redirected, please click the button below to secure your mentorship on our Beacons payment portal:</p>
                         </div>
                         <div class="pt-6">
-                            <a href="https://www.facebook.com/share/g/18uFD3ALcJ/?mibextid=wwXIfr" target="_blank" class="inline-flex items-center gap-3 btn-glow bg-gradient-gold text-obsidian font-bold px-8 py-4 rounded-xl shadow-[0_0_25px_rgba(212,175,55,0.3)]">
-                                Enter Private Academy <i class="fas fa-arrow-right"></i>
+                            <a href="https://shop.beacons.ai/hotboistep/54944349-8713-4876-af20-d006495237c6" target="_blank" class="inline-flex items-center gap-3 btn-glow bg-gradient-gold text-obsidian font-bold px-8 py-4 rounded-xl shadow-[0_0_25px_rgba(212,175,55,0.3)]">
+                                Pay $100 on Beacons <i class="fas fa-credit-card"></i>
                             </a>
                         </div>
                         <div class="pt-4">
@@ -350,7 +350,7 @@
                     };
 
                     // Loading feedback
-                    purchaseBtn.innerHTML = 'Verifying Payment... <i class="fas fa-spinner fa-spin"></i>';
+                    purchaseBtn.innerHTML = 'Redirecting to Secure Payment... <i class="fas fa-spinner fa-spin"></i>';
                     purchaseBtn.classList.add('opacity-75', 'cursor-not-allowed');
 
                     try {
@@ -361,10 +361,13 @@
                         });
 
                         if (response.ok) {
-                            // Hide the form, show checkout success screen
+                            // Hide the form and show manual fallback link
                             form.classList.add('hidden');
                             successDiv.classList.remove('hidden');
                             document.querySelector('main > div.text-center').classList.add('hidden');
+                            
+                            // Automatically redirect to your real Beacons Paywall link
+                            window.location.href = 'https://shop.beacons.ai/hotboistep/54944349-8713-4876-af20-d006495237c6';
                         } else {
                             throw new Error('Server error');
                         }
