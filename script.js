@@ -76,8 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobile-menu');
     
     if(mobileBtn && mobileMenu) {
+        const setMenuState = (open) => {
+            mobileMenu.classList.toggle('hidden', !open);
+            mobileBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            mobileBtn.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+        };
+
         mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            setMenuState(mobileMenu.classList.contains('hidden'));
         });
         
         // Close menu for external links with a delay so Safari doesn't cancel navigation
@@ -85,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
+                    setMenuState(false);
                 }, 150);
             });
         });
@@ -103,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Ensure mobile menu closes
                 if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.add('hidden');
+                    if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
                 }
             }
         });
