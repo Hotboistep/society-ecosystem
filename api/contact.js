@@ -3,16 +3,34 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const { name, email, message } = req.body;
+  const { name, email, service, message } = req.body;
 
   if (!name || !email || !message) {
     return res.status(400).json({ message: 'Missing fields' });
   }
 
-  const TELEGRAM_TOKEN = '7985667131:AAHMvRxJd5Doa-zoVJJn4JqPWPFTpNthgHQ';
-  const CHAT_ID = '1185379811';
+  // Credentials come from Vercel environment variables — never hardcode them.
+  // Set TELEGRAM_TOKEN and TELEGRAM_CHAT_ID in Project → Settings → Environment Variables.
+  const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
+  const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
-  const text = `🚀 NEW WEBSITE LEAD!\n\n👤 Name: ${name}\n📧 Email: ${email}\n💬 Message:\n${message}`;
+  if (!TELEGRAM_TOKEN || !CHAT_ID) {
+    console.error('Missing TELEGRAM_TOKEN or TELEGRAM_CHAT_ID environment variable.');
+    return res.status(500).json({ success: false, error: 'Server is not configured' });
+  }
+
+  const text = [
+    '🚀 NEW WEBSITE LEAD!',
+    '',
+    `👤 Name: ${name}`,
+    `📧 Email: ${email}`,
+    service ? `🛠️ Service: ${service}` : null,
+    '',
+    '💬 Message:',
+    message,
+  ]
+    .filter((line) => line !== null)
+    .join('\n');
 
   const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
 
