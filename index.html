@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Level Up Society | Carter's Computer Services | Hotboistep Gaming</title>
-    
+    <title>Carter's Computer Services | PC Setup &amp; Local AI</title>
+    <meta name="description" content="PC builds and performance tuning, private local AI installation, and streamer setups. Plus AI and content-creation training through Level Up Society.">
+    <link rel="canonical" href="https://society-ecosystem.vercel.app/">
+
+    <!-- Social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Carter's Computer Services">
+    <meta property="og:title" content="Carter's Computer Services | PC Setup &amp; Local AI">
+    <meta property="og:description" content="PC builds and performance tuning, private local AI installation, and streamer setups.">
+    <meta property="og:url" content="https://society-ecosystem.vercel.app/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a0f'/%3E%3Ctext x='16' y='21' font-family='Arial,sans-serif' font-size='10' font-weight='bold' text-anchor='middle' fill='%2300f0ff'%3ELUS%3C/text%3E%3C/svg%3E">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,7 +68,7 @@
                 <span class="text-societyBlue">L</span><span class="text-carterGreen">U</span><span class="text-hotboiRed">S</span>
             </div>
             <div class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
-                <a href="https://beacons.ai/hotboistep" target="_blank" class="nav-link hover:text-white transition-colors">About</a>
+                <a href="#about" class="nav-link hover:text-white transition-colors">About</a>
                 <a href="#services" class="nav-link hover:text-carterGreen transition-colors">Computer Services</a>
                 <a href="https://www.facebook.com/share/g/18uFD3ALcJ/?mibextid=wwXIfr" class="nav-link hover:text-societyBlue transition-colors">Level Up Society</a>
                 <a href="trading.html" class="nav-link text-gold hover:text-white font-bold transition-colors">Trading Academy</a>
@@ -65,11 +78,11 @@
             <a href="https://shop.beacons.ai/hotboistep/b6aa1e32-cecc-4160-9f54-1cd124575cb1" target="_blank" class="hidden md:block btn-glow bg-white/5 border border-white/20 text-white px-6 py-2 rounded-lg font-medium hover:bg-white/10 transition-all">
                 Book Now
             </a>
-            <button class="md:hidden text-white" id="mobile-menu-btn"><i class="fas fa-bars text-xl"></i></button>
+            <button class="md:hidden text-white" id="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"><i class="fas fa-bars text-xl" aria-hidden="true"></i></button>
         </div>
 
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-4 right-4 mt-2 bg-obsidian/95 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden flex flex-col shadow-2xl">
-            <a href="https://beacons.ai/hotboistep" target="_blank" class="px-6 py-4 border-b border-white/5 hover:bg-white/5 text-white">About</a>
+            <a href="#about" class="px-6 py-4 border-b border-white/5 hover:bg-white/5 text-white">About</a>
             <a href="#services" class="px-6 py-4 border-b border-white/5 hover:bg-white/5 text-carterGreen font-bold">Computer Services</a>
             <a href="https://www.facebook.com/share/g/18uFD3ALcJ/?mibextid=wwXIfr" class="px-6 py-4 border-b border-white/5 hover:bg-white/5 text-societyBlue font-bold">Level Up Society</a>
             <a href="trading.html" class="px-6 py-4 border-b border-white/5 hover:bg-white/5 text-gold font-bold">Trading Academy</a>
@@ -79,10 +92,12 @@
         </div>
     </nav>
 
+    <main>
+
     <!-- 1. HERO SECTION -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <div class="relative z-10 text-center px-4 max-w-5xl mx-auto reveal-up">
-            <h2 class="text-sm md:text-base text-gray-400 font-hero tracking-[0.3em] uppercase mb-4">The Complete Digital Ecosystem</h2>
+            <p class="text-sm md:text-base text-gray-400 font-hero tracking-[0.3em] uppercase mb-4">The Complete Digital Ecosystem</p>
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-hero font-bold mb-6 leading-tight text-white glow-text">
                 Level Up Your <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-societyBlue via-carterGreen to-hotboiRed animate-gradient">
@@ -94,16 +109,16 @@
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
                 <a href="https://shop.beacons.ai/hotboistep/b6aa1e32-cecc-4160-9f54-1cd124575cb1" target="_blank" class="btn-primary bg-societyBlue text-obsidian font-bold px-8 py-4 rounded-xl w-full sm:w-auto tracking-wide flex items-center justify-center gap-3 group">
-                    Start Learning <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    Start Learning <i aria-hidden="true" class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </a>
                 <a href="https://amzn.to/3R8VfaA" target="_blank" class="btn-secondary glass-panel border border-white/20 text-white px-8 py-4 rounded-xl w-full sm:w-auto tracking-wide flex items-center justify-center gap-3 hover:bg-white/5 transition-all">
-                    <i class="fab fa-amazon text-orange-400"></i> My Gear
+                    <i aria-hidden="true" class="fab fa-amazon text-orange-400"></i> My Gear
                 </a>
             </div>
         </div>
         <!-- Scroll indicator -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i class="fas fa-chevron-down text-gray-500"></i>
+            <i aria-hidden="true" class="fas fa-chevron-down text-gray-500"></i>
         </div>
     </section>
 
@@ -127,14 +142,15 @@
                                 <div class="text-xs text-gray-400 uppercase tracking-widest">Views</div>
                             </div>
                             <div class="text-center border-l border-white/10">
-                                <div class="text-4xl font-hero font-bold text-hotboiRed mb-2">100%</div>
-                                <div class="text-xs text-gray-400 uppercase tracking-widest">Growth</div>
+                                <div class="text-4xl font-hero font-bold text-hotboiRed mb-2">1,000+</div>
+                                <div class="text-xs text-gray-400 uppercase tracking-widest">Videos</div>
                             </div>
                         </div>
+                        <p class="text-xs text-gray-500 mt-6 leading-relaxed">View count combines YouTube, TikTok and Twitch.</p>
                     </div>
                     <div class="relative h-[400px] rounded-2xl overflow-hidden group">
                         <div class="absolute inset-0 bg-gradient-to-tr from-obsidian via-transparent to-societyBlue/20 z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop" alt="Setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop" alt="Desk setup with dual monitors and code on screen" width="800" height="533" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute bottom-6 left-6 z-20">
                             <div class="font-hero text-2xl font-bold text-white">CARTER</div>
                             <div class="text-societyBlue text-sm tracking-widest uppercase">Founder / Architect</div>
@@ -181,6 +197,15 @@
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">OBS configuration, audio routing, dual-PC streaming setups, and automated content pipelines for Twitch and YouTube.</p>
                     <a href="https://shop.beacons.ai/hotboistep/b6aa1e32-cecc-4160-9f54-1cd124575cb1" target="_blank" class="text-hotboiRed text-sm font-semibold hover:text-white transition-colors">Book Service &rarr;</a>
                 </div>
+                <!-- Service Card 4 -->
+                <div class="hover-card glass-card p-8 rounded-2xl border border-white/20 reveal-up" style="transition-delay: 400ms;">
+                    <div class="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-2xl text-white" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Website Creation</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Fast, clean landing pages for creators and small businesses &mdash; built to load quickly, rank in search, and turn visitors into enquiries.</p>
+                    <a href="https://shop.beacons.ai/hotboistep/b6aa1e32-cecc-4160-9f54-1cd124575cb1" target="_blank" class="text-white text-sm font-semibold hover:text-societyBlue transition-colors">Book Service &rarr;</a>
+                </div>
             </div>
         </div>
     </section>
@@ -192,7 +217,7 @@
                 <div class="w-full lg:w-1/2 order-2 lg:order-1 relative reveal-up">
                     <div class="absolute inset-0 bg-societyBlue/20 filter blur-[100px] rounded-full z-0"></div>
                     <div class="relative z-10 glass-card p-2 rounded-2xl border border-societyBlue/30 shadow-[0_0_50px_rgba(0,240,255,0.1)]">
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop" alt="AI Brain" class="rounded-xl w-full">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop" alt="Abstract visualization of a neural network" width="800" height="533" loading="lazy" decoding="async" class="rounded-xl w-full h-auto">
                     </div>
                     <!-- Floating UI Element -->
                     <div class="absolute -right-10 top-20 glass-card p-4 rounded-xl border border-white/20 z-20 animate-float hidden md:block">
@@ -272,10 +297,16 @@
     <section id="storefront" class="py-24 relative z-10 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end reveal-up">
             <div>
-                <h3 class="text-orange-400 font-hero tracking-[0.2em] uppercase text-sm mb-3">Creator Arsenal</h3>
+                <p class="text-orange-400 font-hero tracking-[0.2em] uppercase text-sm mb-3">Creator Arsenal</p>
                 <h2 class="text-3xl md:text-4xl font-hero font-bold text-white">My Recommended Gear</h2>
             </div>
-            <a href="https://amzn.to/3R8VfaA" target="_blank" class="hidden sm:inline-flex text-orange-400 text-sm font-semibold hover:text-white transition-colors">View All on Amazon &rarr;</a>
+            <a href="https://amzn.to/3R8VfaA" target="_blank" rel="noopener sponsored" class="hidden sm:inline-flex text-orange-400 text-sm font-semibold hover:text-white transition-colors">View All on Amazon &rarr;</a>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 mb-8">
+            <p class="text-xs text-gray-500 leading-relaxed">
+                <strong class="text-gray-400">Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Some links on this page are affiliate links, which means I may earn a small commission at no extra cost to you. I only recommend gear I would use myself.
+            </p>
         </div>
         
         <!-- Auto-scrolling carousel track -->
@@ -289,14 +320,14 @@
                 <!-- Product AI Tool -->
                 <a href="https://try.magica.com/stephonap" target="_blank" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-societyBlue/50 transition-all flex flex-col shrink-0 group">
                     <div class="h-40 bg-gradient-to-br from-societyBlue/20 to-transparent rounded-xl mb-4 flex items-center justify-center p-2 group-hover:scale-[1.02] transition-transform">
-                        <i class="fas fa-sparkles text-4xl text-societyBlue animate-pulse"></i>
+                        <i class="fas fa-wand-magic-sparkles text-4xl text-societyBlue animate-pulse"></i>
                     </div>
                     <h4 class="text-white font-bold text-sm mb-1 line-clamp-2">Magica AI Image Generator</h4>
                     <p class="text-xs text-gray-400 mb-2 line-clamp-2">The AI generation tool I use to create stunning visuals.</p>
                     <p class="text-societyBlue text-sm font-bold mt-auto pt-2 flex items-center gap-2">Try it Free <i class="fas fa-arrow-right text-xs"></i></p>
                 </a>
                 <!-- Product 1 -->
-                <a href="#" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
+                <a href="https://amzn.to/3R8VfaA" target="_blank" rel="noopener sponsored" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
                     <div class="h-40 bg-white/5 rounded-xl mb-4 flex items-center justify-center p-2">
                         <i class="fas fa-camera text-4xl text-gray-500"></i>
                     </div>
@@ -304,7 +335,7 @@
                     <p class="text-orange-400 text-sm font-bold mt-auto pt-2">View on Amazon</p>
                 </a>
                 <!-- Product 2 -->
-                <a href="#" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
+                <a href="https://amzn.to/3R8VfaA" target="_blank" rel="noopener sponsored" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
                     <div class="h-40 bg-white/5 rounded-xl mb-4 flex items-center justify-center p-2">
                         <i class="fas fa-microphone text-4xl text-gray-500"></i>
                     </div>
@@ -312,7 +343,7 @@
                     <p class="text-orange-400 text-sm font-bold mt-auto pt-2">View on Amazon</p>
                 </a>
                 <!-- Product 3 -->
-                <a href="#" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
+                <a href="https://amzn.to/3R8VfaA" target="_blank" rel="noopener sponsored" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
                     <div class="h-40 bg-white/5 rounded-xl mb-4 flex items-center justify-center p-2">
                         <i class="fas fa-desktop text-4xl text-gray-500"></i>
                     </div>
@@ -320,7 +351,7 @@
                     <p class="text-orange-400 text-sm font-bold mt-auto pt-2">View on Amazon</p>
                 </a>
                 <!-- Product 4 -->
-                <a href="#" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
+                <a href="https://amzn.to/3R8VfaA" target="_blank" rel="noopener sponsored" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
                     <div class="h-40 bg-white/5 rounded-xl mb-4 flex items-center justify-center p-2">
                         <i class="fas fa-lightbulb text-4xl text-gray-500"></i>
                     </div>
@@ -328,7 +359,7 @@
                     <p class="text-orange-400 text-sm font-bold mt-auto pt-2">View on Amazon</p>
                 </a>
                 <!-- Product 5 -->
-                <a href="#" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
+                <a href="https://amzn.to/3R8VfaA" target="_blank" rel="noopener sponsored" class="w-64 glass-card p-4 rounded-2xl border border-white/10 hover:border-orange-400/50 transition-all flex flex-col shrink-0">
                     <div class="h-40 bg-white/5 rounded-xl mb-4 flex items-center justify-center p-2">
                         <i class="fas fa-keyboard text-4xl text-gray-500"></i>
                     </div>
@@ -369,8 +400,8 @@
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Service Needed</label>
-                        <select name="service" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue appearance-none transition-colors">
+                        <label for="service" class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Service Needed</label>
+                        <select name="service" id="service" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-societyBlue focus:ring-1 focus:ring-societyBlue appearance-none transition-colors">
                             <option value="PC Setup & Optimization">PC Setup & Optimization</option>
                             <option value="Local AI Installation">Local AI Installation</option>
                             <option value="Website Creation">Website Creation</option>
@@ -389,13 +420,16 @@
                     <!-- Success Message Container (Hidden by default) -->
                     <div id="success-message" class="hidden mt-6 p-6 rounded-xl bg-carterGreen/10 border border-carterGreen/30 text-center">
                         <h4 class="text-xl font-bold text-white mb-2">Message Received! 🚀</h4>
-                        <p class="text-gray-300 mb-4">While I review your request, check out my Creator Arsenal gear on Amazon to start leveling up your setup today:</p>
-                        <a href="https://amzn.to/3R8VfaA" target="_blank" class="inline-block bg-white text-black font-bold px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors">View Creator Arsenal &rarr;</a>
+                        <p class="text-gray-300 mb-2">Thanks for reaching out &mdash; I read every message myself and normally reply within one business day.</p>
+                        <p class="text-gray-400 text-sm mb-6">If it's urgent, message me on <a href="https://www.facebook.com/share/g/18uFD3ALcJ/?mibextid=wwXIfr" target="_blank" rel="noopener" class="text-societyBlue hover:underline">Facebook</a> or <a href="https://www.twitch.tv/hotboistep" target="_blank" rel="noopener" class="text-societyBlue hover:underline">Twitch</a> and I'll get back to you faster.</p>
+                        <a href="https://amzn.to/3R8VfaA" target="_blank" rel="noopener sponsored" class="inline-block bg-white text-black font-bold px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors">View Creator Arsenal &rarr;</a>
                     </div>
                 </form>
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- 9. FOOTER -->
     <footer class="border-t border-white/10 bg-black/50 relative z-10 pt-16 pb-8">
@@ -424,20 +458,20 @@
                 <div>
                     <h4 class="text-white font-bold mb-4">Socials</h4>
                     <div class="flex space-x-4">
-                        <a href="https://www.youtube.com/@HotBoiStep" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FF0000] hover:text-white transition-colors text-gray-400"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.twitch.tv/hotboistep" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#9146FF] hover:text-white transition-colors text-gray-400"><i class="fab fa-twitch"></i></a>
-                        <a href="https://www.tiktok.com/@hotboistep" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white hover:text-black transition-colors text-gray-400"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-colors text-gray-400"><i class="fab fa-instagram"></i></a>
-                        <a href="https://try.magica.com/stephonap" target="_blank" title="Magica AI Services" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-societyBlue hover:text-obsidian transition-colors text-gray-400"><i class="fas fa-sparkles"></i></a>
-                        <a href="https://amzn.to/3R8VfaA" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FF9900] hover:text-white transition-colors text-gray-400"><i class="fab fa-amazon"></i></a>
+                        <a href="https://www.youtube.com/@HotBoiStep" target="_blank" rel="noopener" aria-label="YouTube" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FF0000] hover:text-white transition-colors text-gray-400"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.twitch.tv/hotboistep" target="_blank" rel="noopener" aria-label="Twitch" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#9146FF] hover:text-white transition-colors text-gray-400"><i class="fab fa-twitch"></i></a>
+                        <a href="https://www.tiktok.com/@hotboistep" target="_blank" rel="noopener" aria-label="TikTok" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white hover:text-black transition-colors text-gray-400"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://beacons.ai/hotboistep" target="_blank" rel="noopener" aria-label="Instagram and social links" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-colors text-gray-400"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://try.magica.com/stephonap" target="_blank" title="Magica AI Services" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-societyBlue hover:text-obsidian transition-colors text-gray-400"><i class="fas fa-wand-magic-sparkles"></i></a>
+                        <a href="https://amzn.to/3R8VfaA" target="_blank" rel="noopener" aria-label="My Amazon gear list" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FF9900] hover:text-white transition-colors text-gray-400"><i class="fab fa-amazon"></i></a>
                     </div>
                 </div>
             </div>
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
                 <p>&copy; 2026 Level Up Society & Carter's Computer Services. All rights reserved.</p>
                 <div class="flex space-x-4">
-                    <a href="#" class="hover:text-white">Privacy Policy</a>
-                    <a href="#" class="hover:text-white">Terms of Service</a>
+                    <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-white">Terms of Service</a>
                 </div>
             </div>
         </div>
